@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "clear": "^0.0.1",
+    "inquirer": "^3.3.0"
+  },
+  "bin": {
+    "disco": "./index.js"
+  },
+  "name": "catholic_disco",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "amymc",
+  "license": "MIT"
+}
