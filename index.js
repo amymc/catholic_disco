@@ -25,6 +25,16 @@ const chatPrompt = {
   ]
 };
 
+const dancePrompt = {
+  type: 'list',
+  name: 'dance',
+  message: 'John comes to talk to you and asks if you want to dance',
+  choices: [
+    'Yes, Fr. So-and-so won’t see us, he’s half blind',
+    'No, my Catholic education has failed to teach me how babies are made.' +  os.EOL + '  I’m afraid to have any contact with the opposite sex'
+  ]
+};
+
 function intro() {
   clear();
   console.log(chalk.black.bgGreen('++++ Welcome to the catholic disco ++++'));
@@ -47,7 +57,7 @@ function getGender() {
 }
 
 function getPenance() {
-  console.log();
+  clear();
   console.log('Fr. So-and-so sees you all laughing.');
   console.log();
   console.log(chalk.italic('Fr:') + chalk.yellow.bgBlack(' Careful now, you sound like you’re having too much fun.' +  os.EOL + '    Go and say a few hail marys. That’ll soften your cough for you.'));
@@ -61,6 +71,7 @@ function doPenance() {
   const updateProgress = setInterval(function () {
     if (i === 4) {
       clearInterval(updateProgress);
+      meetJohn();
     };
     ui.updateBottomBar(progress[i++ % 5]);
   }, 500);
@@ -68,8 +79,27 @@ function doPenance() {
 }
 
 function meetJohn() {
-  console.log();
-  
+  clear();
+  inquirer.prompt(dancePrompt).then((answers) => {
+    if(answers.dance === dancePrompt.choices[1]) {
+      getMedal();
+    }
+  });
+}
+
+function getMedal() {
+  clear();
+  console.log('Cailin maith. Fr. So-and-so gives you a holy medal for your piousness.');
+  console.log('');
+  console.log('You\'ve survived the disco but you\'ll be plagued by Catholic guilt your whole life');
+  gameOver();
+}
+
+function gameOver() {
+  console.log('');
+  console.log(chalk.black.bgGreen('========================='));
+  console.log(chalk.black.bgGreen('++++++++GAME OVER++++++++'));
+  console.log(chalk.black.bgGreen('========================='));
 }
 
 function haveTheChats() {
@@ -78,8 +108,8 @@ function haveTheChats() {
   console.log('You\'re at the local dance hall for the monthly disco. The local priest Fr. So-and-so is keeping an eye on goings-on …');
   console.log();
 
-  inquirer.prompt(chatPrompt).then(function (answers) {
-    if(answers.chat = chatPrompt.choices[0]) {
+  inquirer.prompt(chatPrompt).then((answers) => {
+    if(answers.chat === chatPrompt.choices[0]) {
       getPenance();
     } else {
       meetJohn();
