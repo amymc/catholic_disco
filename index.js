@@ -199,7 +199,7 @@ function gettingClose() {
     if(answers.close === closePrompt.choices[0]) {
       getPregnant();
     } else if (answers.close === closePrompt.choices[1]) {
-      console.log('Jesus no! Sure the catholic church doesn’t believe in contraception.' + os.EOL +' Thank be to God AIDS doesn’t exist yet.')
+      console.log('You must be joking girl! Sure the catholic church doesn’t believe in contraception.' + os.EOL +'Thanks be to God AIDS doesn’t exist yet.')
     } else {
      // getMedal();
     }
@@ -244,6 +244,12 @@ function gameOver() {
   console.log('#makeirelandsecularagain');
   console.log('');
   console.log('#repealthe8th');
+  console.log('');
+  console.log('Want to see the code for this?');
+  console.log('https://github.com/amymc/catholic_disco');
+  console.log('');
+  console.log('Confused by the reference to Buckaroo or deportation?');
+  console.log('See here >>> https://github.com/amymc/catholic_disco/readme.txt')
 }
 
 function haveTheChats() {
