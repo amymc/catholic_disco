@@ -45,7 +45,6 @@ const johnDancePrompt = {
 const noraDancePrompt = {
   type: 'list',
   name: 'dance',
-  // message: chalk.italic('Fr:') + chalk.yellow.bgBlack(' You’re dancing too close to that cailín.'+ os.EOL + '      If I catch you at it again I\'ll have you deported for corrupting the local dance hall.') + os.EOL,
   message: chalk.italic('Fr:') + chalk.yellow.bgBlack(' You’re dancing too close to that cailín.'+ os.EOL + '      If I catch you at it again I\'ll have you deported for corrupting the local dance hall.') + os.EOL,
   choices: [
     'But you can’t deport me, I’m Irish!' + os.EOL,
@@ -70,7 +69,7 @@ const eavesdropPrompt = {
   message: 'What do you do?' + os.EOL,
   choices: [
     'Nothing. If my abuse at the hands of the Christian Brothers has taught me anything, it\'s that you can\'t win with a man of the cloth.' + os.EOL,
-    'Is there another option here??'
+    'Go to the gardaí with this information.'
   ]
 };
 
@@ -108,14 +107,17 @@ function getGender() {
 }
 
 function eavesdrop() {
-  console.log('On your way to the holy water font you overhear the bishop talking to Fr. So-and-so...' + os.EOL + os.EOL + chalk.italic('Bishop:') + chalk.yellow.bgBlack(' Oh Fr. So-and-so, I heard you’ve been fiddling with children. ' + os.EOL + '        Ah sure that’s grand, I’m partial to a bit of altar boy myself. ' + os.EOL + '        We’ll move you to a new parish. No one will ever know.') + os.EOL);
+  console.log('On your way to the holy water font you overhear the Bishop talking to Fr. So-and-so...' + os.EOL + os.EOL + chalk.italic('Bishop:') + chalk.yellow.bgBlack(' Oh Fr. So-and-so, I heard you’ve been fiddling with children. ' + os.EOL + '        Ah sure that’s grand, I’m partial to a bit of altar boy myself. ' + os.EOL + '        We’ll move you to a new parish. No one will ever know.') + os.EOL);
   inquirer.prompt(eavesdropPrompt).then((answers) => {
+    clear();
     if(answers.eavesdrop === eavesdropPrompt.choices[0]) {
-      clear();
       console.log("Good man. You make a hasty retreat to the dance floor.");
       setTimeout(meetNora, 1000);
     } else {
-     // 
+      console.log('Sure don\'t you know that Garda Burke plays bridge with the Bishop.');
+      console.log('');
+      console.log('The Bishop manages to get you imprisioned for homosexual acts despite any proof of said acts.');
+      setTimeout(gameOver, 1500);
     }
   });
 }
@@ -123,8 +125,6 @@ function eavesdrop() {
 function meetNora() {
   console.log('');
   console.log('Nora\'s always giving you the eye when you\'re coming out of confession.' + os.EOL + 'You ask her to dance.' + os.EOL);
-  // console.log((chalk.italic('Fr:') + chalk.yellow.bgBlack('You’re dancing too close to that cailín'+ os.EOL + 'If I catch you at it again I\'ll have you deported for corrupting the local dance hall.') + os.EOL);
-  // console.log()
   inquirer.prompt(noraDancePrompt).then((answers) => {
     clear();
     if(answers.dance === noraDancePrompt.choices[0]) {
@@ -145,7 +145,7 @@ function goOutside() {
     console.log('');
     console.log(chalk.italic('Sr:') + chalk.yellow.bgBlack(' Off to the priesthood with you young man. That’ll stop your urges.'));
     gameOver();
-  }, 1500);
+  }, 2500);
 }
 
 function getPenance() {
@@ -204,10 +204,6 @@ function gettingClose() {
      // getMedal();
     }
   });
-}
-
-function youMustBeJoking() {
-
 }
 
 function getPregnant() {
