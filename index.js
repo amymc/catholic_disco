@@ -16,8 +16,8 @@
     '/ Praying',
     '| Praying',
     '\\ Still praying',
-    '- On the last hail mary',
-    'Penance done!\nYou\'re back in business'
+    '- On the last Hail Mary',
+    'Penance done!\nYou\'re back in business.'
   ];
 
   let i = 0;
@@ -28,7 +28,7 @@
     name: 'chat',
     message: 'Mary and Pauline come to chat to you. Do you engage in conversation?' + os.EOL,
     choices: [
-      'Sure why not, they’re a bit of craic' + os.EOL,
+      'Sure why not, they’re a bit of craic.' + os.EOL,
       'No. I don’t really want to talk to anyone. I just came here to get away from my 6 brothers.'
     ]
   };
@@ -64,7 +64,7 @@
   const johnDancePrompt = {
     type: 'list',
     name: 'dance',
-    message: 'John comes to talk to you and asks if you want to dance' + os.EOL,
+    message: 'John comes to talk to you and asks if you want to dance?' + os.EOL,
     choices: [
       'Yes, sure Fr. Brennan won’t see us, he’s half blind' + os.EOL,
       'Oh I don\'t know now, that won\'t go down too well with the Fr.' +  os.EOL + '  Get out your rosary beads and he\'ll think we\'re saying a decade together.' + os.EOL,
@@ -139,7 +139,7 @@
     clear();
     console.log('Fr. Brennan sees you all laughing.');
     console.log();
-    console.log(chalk.italic('Fr:') + chalk.yellow.bgBlack(' Careful now, you sound like you’re having too much fun.' +  os.EOL + '    Go and say a few hail marys. That’ll soften your cough for you.'));
+    console.log(chalk.italic('Fr:') + chalk.yellow.bgBlack(' Careful now, you sound like you’re having too much fun.' +  os.EOL + '    Go and say a few Hail Marys. That’ll soften your cough for you.'));
     
     setTimeout(doPenance, 3000);
   }
@@ -176,7 +176,7 @@
     clear();
     console.log('Cailín maith. Fr. Brennan gives you a holy medal for your piousness.');
     console.log('');
-    console.log('You\'ve survive the disco but you\'ll be plagued by Catholic guilt your whole life');
+    console.log('You survive the disco but you\'ll be plagued by Catholic guilt your whole life.');
     gameOver();
   }
 
@@ -197,7 +197,7 @@
     clear();
     console.log('You survive the disco.');
     console.log('');
-    console.log('You spend the rest of your life waiting in vain for the seperation of church and state.');
+    console.log('You spend the rest of your life waiting in vain for the separation of church and state.');
     console.log('')
     console.log('R.I.P.');
     gameOver();
@@ -209,7 +209,9 @@
     console.log('Unbelievably, a man will walk on the moon before contraception is available to you.' + os.EOL);
     console.log('Feeling conflicted about the impure thoughts you\'re having, you ask Fr. Brennan for an emergency confession.' + os.EOL);
     setTimeout(() => {
-      console.log('You survive the disco but a few years later you die a preventable death due to pregancy complicatons.');
+      console.log('You survive the disco but a few years later you die due to pregancy complicatons.');
+      console.log('If abortion had been available to you, your life would have been spared.');
+      console.log('');
       console.log('Let us pray for the repose of your soul.');
       gameOver();
     }, 5000);
@@ -230,7 +232,7 @@
 
   function goingToHell() {
     clear();
-    console.log(chalk.italic('Fr:') + chalk.yellow.bgBlack(' Oh you’re pregnant out of wedlock are you? You’ll go straight to hell for that,' +  os.EOL + '    but in the meantime we’ll force you to have the baby and then bury you and the child in an unmarked grave.'));
+    console.log(chalk.italic('Fr:') + chalk.yellow.bgBlack(' Oh you’re pregnant out of wedlock are you? You’ll go straight to hell for that,' +  os.EOL + '    but in the meantime we’ll force you to have the baby and then bury the child in an unmarked grave.'));
     gameOver();
   }
 
@@ -275,7 +277,7 @@
     console.log('https://github.com/amymc/catholic_disco');
     console.log('');
     console.log('Confused by the references to Buckaroo, unmarked graves or deportation?');
-    console.log('See here >>> https://github.com/amymc/catholic_disco/readme.txt#background')
+    console.log('See here >>> https://github.com/amymc/catholic_disco/README.md#background')
   }
 
   function start() {
