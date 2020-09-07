@@ -98,7 +98,8 @@
     inquirer.prompt(eavesdropPrompt).then((answers) => {
       clear();
       if(answers.eavesdrop === eavesdropPrompt.choices[0]) {
-        console.log("Good man. You make a hasty retreat to the dance floor.");
+        console.log('');
+        console.log('Good man. You make a hasty retreat to the dance floor.');
         setTimeout(meetNora, 1000);
       } else {
         console.log('Sure don\'t you know that Garda Burke plays bridge with the Bishop.');
@@ -115,9 +116,11 @@
     inquirer.prompt(noraDancePrompt).then((answers) => {
       clear();
       if(answers.dance === noraDancePrompt.choices[0]) {
+        console.log('');
         console.log(chalk.italic('Fr:') + chalk.yellow.bgBlack(' Ah sure nevermind that, the power of the Catholic church knows no bounds.'));
         setTimeout(goOutside, 1700);
       } else {
+        console.log('');
         console.log('You\'re sent to jail for blasphemy');
         gameOver();
       }
@@ -141,7 +144,7 @@
     console.log();
     console.log(chalk.italic('Fr:') + chalk.yellow.bgBlack(' Careful now, you sound like you’re having too much fun.' +  os.EOL + '    Go and say a few Hail Marys. That’ll soften your cough for you.'));
     
-    setTimeout(doPenance, 3000);
+    setTimeout(doPenance, 2000);
   }
 
   function doPenance() {
@@ -161,6 +164,7 @@
 
   function meetJohn() {
     clear();
+    console.log('');
     inquirer.prompt(johnDancePrompt).then((answers) => {
       if(answers.dance === johnDancePrompt.choices[0]) {
         becomeNun();
@@ -182,6 +186,7 @@
 
   function gettingClose() {
     clear();
+    console.log('');
     inquirer.prompt(closePrompt).then((answers) => {
       if(answers.close === closePrompt.choices[0]) {
         getPregnant();
@@ -205,11 +210,14 @@
 
   function goToConfession() {
     clear();
+    console.log('');
     console.log('You must be joking girl! Sure the catholic church doesn’t believe in contraception.');
     console.log('Unbelievably, a man will walk on the moon before contraception is available to you.' + os.EOL);
     console.log('Feeling conflicted about the impure thoughts you\'re having, you ask Fr. Brennan for an emergency confession.' + os.EOL);
     setTimeout(() => {
-      console.log('You survive the disco but a few years later you die due to pregancy complicatons.');
+      clear();
+      console.log('');
+      console.log('You survive the disco but a few years later you die due to pregnancy complicatons.');
       console.log('If abortion had been available to you, your life would have been spared.');
       console.log('');
       console.log('Let us pray for the repose of your soul.');
@@ -232,15 +240,18 @@
 
   function goingToHell() {
     clear();
+    console.log('');
     console.log(chalk.italic('Fr:') + chalk.yellow.bgBlack(' Oh you’re pregnant out of wedlock are you? You’ll go straight to hell for that,' +  os.EOL + '    but in the meantime we’ll force you to have the baby and then bury the child in an unmarked grave.'));
     gameOver();
   }
 
   function becomeNun() {
     clear();
+    console.log('');
     console.log('Oh you underestimated Fr.’s eyesight.');
-    console.log();
+    console.log('');
     setTimeout(function() {
+      console.log('');
       console.log(chalk.italic('Fr:') + chalk.yellow.bgBlack(' You’re dancing too close to that fella. Off to the nunnery with you to learn a bit of chastity.'));
       gameOver();
     }, 700);
@@ -258,9 +269,11 @@
 
   function intro() {
     clear();
+    console.log('');
     console.log('Right so, let\'s see how pious you are.');
+    console.log('');
     console.log('You\'re at the local dance hall for the monthly disco. The local priest Fr. Brennan is keeping an eye on goings-on...');
-    console.log();
+    console.log('');
   }
 
   function gameOver() {
@@ -282,9 +295,11 @@
 
   function start() {
     clear();
+    console.log('');
     console.log(chalk.black.bgGreen('++++ Welcome to the catholic disco ++++'));
+    console.log('');
     console.log('Let’s party like it’s 1959!');
-    console.log();
+    console.log('');
     getGender();
   }
 
